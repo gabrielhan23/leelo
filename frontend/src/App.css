@@ -30,6 +30,29 @@
   transform: translate(-50%, -50%);
 }
 
+.player-counter {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, 0);
+}
+
+.inqueue-text {
+  position: absolute;
+  left: 50%;
+  font-size: 24px;
+  color: #696969;
+  top: calc(13% + 52px);
+  transform: translate(-50%, -50%);
+}
+
+.timer {
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  transform: translate(-50%);
+}
+
 .header {
   background-color: rgb(255, 255, 255);
   color: #FF9E2D;
