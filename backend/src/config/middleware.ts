@@ -1,5 +1,5 @@
 import cors from 'cors';
-import type { Application } from 'express';
+import type { Express } from 'express';
 import { json } from 'express';
 import session from 'express-session';
 import helmet from 'helmet';
@@ -7,7 +7,7 @@ import passport from 'passport';
 
 import env from './env';
 
-function loadMiddleware(app: Application) {
+function loadMiddleware(app: Express) {
   app.use(json());
   app.use(cors({
     credentials: true,
@@ -21,7 +21,7 @@ function loadMiddleware(app: Application) {
     cookie: {
       secure: !env.isDev,
       httpOnly: true,
-      maxAge: 1000 * 60 * 60, // 1 hour
+      maxAge: 1000 * 60 * 60 * 24, // 1 day
       sameSite: 'lax',
     },
     rolling: true,
