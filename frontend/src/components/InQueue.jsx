@@ -12,7 +12,7 @@ function Queue() {
     return (
         //this should not be a link; change eventually to a div or the col/row thing, and have buttons in the div
         //the onMouseOver is temp, you can change it later
-        <Link to="/game" onMouseOver={()=>setTime(Time + 1)}><div className="in_queue">{Math.floor(Time / 60) < 10 ? "0" : ""}{Math.floor(Time / 60)}:{Time % 60 < 10 ? "0" : ""}{Time % 60}</div></Link>
+        <Link to="/game" onMouseOver={()=>setTime(Time + 1)}><div className="in-queue">{Math.floor(Time / 60) < 10 ? "0" : ""}{Math.floor(Time / 60)}:{Time % 60 < 10 ? "0" : ""}{Time % 60}</div></Link>
     );
   }
   

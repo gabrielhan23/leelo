@@ -3,6 +3,7 @@ import Queue from './components/Queue';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import InQueue from './components/InQueue';
+import GameWindow from './components/GameWindow';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 import './App.css';
 
@@ -11,11 +12,12 @@ function App() {
   return (
       <Router>
         <Header />
-          <Routes>
-            <Route path='/' element={<Queue></Queue>} />
-            <Route path='/queue' element={<InQueue></InQueue>} />
-          </Routes>
-          {/* <Queue /> */}
+        <Routes>
+          <Route path='/' element={<Queue/>} />
+          <Route path='/queue' element={<InQueue/>} />
+          <Route path='/game' element={<GameWindow/>} />
+        </Routes>
+        {/* <Queue /> */}
         <Footer />
       </Router>
   );

@@ -7,7 +7,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.Queue_Button {
+.queue-button {
   background-color: rgb(255, 255, 255);
   color: #FF9E2D;
   height: 120px;
@@ -30,7 +30,7 @@
   transform: translate(-50%, -50%);
 }
 
-.Header {
+.header {
   background-color: rgb(255, 255, 255);
   color: #FF9E2D;
   height: 72px;
@@ -42,7 +42,8 @@
 }
 
 .header-logo {
-  margin-left: 3vw;
+  padding-left: 3vw;
+  padding-top: 2px;
   width: 80px;
 }
 
@@ -50,7 +51,7 @@
   width: 100%;
 }
 
-.Footer {
+.footer {
   background-color: rgb(255, 255, 255);
   color: #FF9E2D;
   height: 72px;
@@ -75,7 +76,8 @@ body {
 
 .login-logo {
   position: absolute;
-  right: 4vw;
+  right: 3vw;
+  padding-top: 4px;
   width: 24px;
 }
 
@@ -85,11 +87,12 @@ body {
 
 .darktoggle-logo {
   position: absolute;
-  right: 8vw;
+  right: calc(6vw + 24px);
+  padding-top: 4px;
   width: 38px;
 }
 
-.in_queue {
+.in-queue {
   background-color: rgb(255, 255, 255);
   color: #FF9E2D;
   height: 240px;
@@ -99,8 +102,34 @@ body {
   align-items: center;
   position: absolute;
   top: 50vh;
-  left: 50%;
+  left: 50vw;
   transform: translate(-50%, -50%);
   font-family: 'Inconsolata';
   font-size: 48px;
 }
+
+.game_window {
+  display: flex;
+}
+
+.chat-window {
+  background-color: rgb(255, 255, 255);
+  margin-top: 96px;
+  left: 24px;
+  height: calc(100vh - 192px);
+  width: 360px;
+
+  position: absolute
+}
+
+.code-window {
+  background-color: rgb(255, 255, 255);
+  margin-top: 96px;
+  left: 408px;
+
+  height: calc(100vh - 192px);
+  width: calc(100vw - 510px);
+
+  position: absolute
+}
+  
