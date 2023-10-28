@@ -88,3 +88,19 @@ body {
   right: 8vw;
   width: 38px;
 }
+
+.in_queue {
+  background-color: rgb(255, 255, 255);
+  color: #FF9E2D;
+  height: 240px;
+  width: 600px;
+  display: flex;
+  justify-content: center; /* Align horizontal */
+  align-items: center;
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Inconsolata';
+  font-size: 48px;
+}
