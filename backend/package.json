@@ -29,5 +29,8 @@
     "eslint-plugin-import": "^2.29.0",
     "nodemon": "^3.0.1",
     "typescript": "^5.2.2"
+  },
+  "overrides": {
+    "oauth": "^0.10.0"
   }
 }
