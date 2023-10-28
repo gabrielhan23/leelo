@@ -8,7 +8,7 @@ import CodeWindow from './CodeWindow';
 export default function GameWindow() {
     return (
         <div className="game-window"> 
-            <ChatWindow/> 
+            <ChatWindow messages={["hello", "hi"]}/> 
             <CodeWindow/>
         </div>
     )
