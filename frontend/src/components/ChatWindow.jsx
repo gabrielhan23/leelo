@@ -7,15 +7,14 @@ export default function ChatWindow(props) {
     const {
         messages
     } = props;
-    
     return (
         <div className="chat-window">            
             {
-                messages.map((message) => {
+                messages.map((message) => 
                     <UserMessage message={message}/>
-                })
+                )
             }
-            <UserMessage message="hello"></UserMessage>
+            {/* <UserMessage message="hello"></UserMessage> */}
         </div>
     )
 }
