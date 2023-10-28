@@ -5,7 +5,6 @@ import config from './env';
 import UserModel from '../schemas/user';
 
 export const LOGIN_REDIRECT = '/api/login/redirect';
-
 export const SCOPE = ['profile', 'email'];
 
 function passportInit() {
@@ -30,7 +29,6 @@ function passportInit() {
         email,
         google_id: profile.id,
         username: profile.displayName,
-        // refresh_token: refreshToken, <-------------- currently not needed.
       });
     }
 
