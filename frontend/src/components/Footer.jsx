@@ -6,7 +6,7 @@ import '../App.css';
 function Footer() {
     return (
         <nav className="navbar">
-            <div className="Footer">
+            <div className="footer">
                 <Link to="/login" className="navbar-logo"><div>test</div></Link>
             </div>
         </nav>

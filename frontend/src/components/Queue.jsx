@@ -12,7 +12,7 @@ function Queue() {
         // onPress={() => console.log(window.innerWidth, window.innerHeight)}> 
         //     <div className="Queue_Button">queue up</div>
         // </Pressable>
-        <Link to="/queue" onMouseOver={()=>console.log('test')}><div className="Queue_Button">queue up</div></Link>
+        <Link to="/queue" onMouseOver={()=>console.log('test')}><div className="queue-button">queue up</div></Link>
     );
   }
   
