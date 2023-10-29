@@ -2,7 +2,6 @@ import cors from 'cors';
 import type { Express } from 'express';
 import { json } from 'express';
 import session from 'express-session';
-import helmet from 'helmet';
 import passport from 'passport';
 
 import env from './env';
@@ -11,8 +10,9 @@ function loadMiddleware(app: Express) {
   app.use(json());
   app.use(cors({
     credentials: true,
+    origin: ['http://localhost:3000', 'http://localhost:8080'],
   }));
-  app.use(helmet());
+  // app.use(helmet());
   app.use(session({
     secret: env.SESSION_SECRET,
     name: 'sessionId',

@@ -27,7 +27,12 @@ class Manager {
 
   addPlayer(user: UserType): string {
     const uuid = this.generateUuid();
+    console.log('I GOT HEREEEE');
+    console.log(uuid);
 
+    // if (this.queue.includes(user)) {
+    //   return;
+    // }
     this.players.set(uuid, new Player(uuid, user));
 
     return uuid;
@@ -47,6 +52,8 @@ class Manager {
 
   enterQueue(uuid: string, socket: Socket) {
     const p = this.players.get(uuid);
+    console.log('UUID GETTING ENTERED QUEue');
+    console.log(uuid);
     if (!p) {
       throw new Error('Player not found');
     }
@@ -82,13 +89,10 @@ class Manager {
 
   // cryptographically secure uuid to identify players
   private generateUuid(): string {
-    let s = '';
-    do {
-      const uuid = new Int32Array();
-      crypto.getRandomValues(uuid);
-      s = uuid.toString();
-    } while (this.players.has(s));
-    return s;
+    const uuid = new Int32Array();
+    crypto.getRandomValues(uuid);
+    return Math.random().toString(36);
+    return uuid.toString();
   }
 
   // code used for game id and socket rooms

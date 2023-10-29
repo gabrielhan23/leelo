@@ -7,6 +7,7 @@ import * as config from './config';
 import Manager from './game/manager';
 import * as routes from './routes';
 import type { UserType } from './schemas/user';
+import { json } from 'stream/consumers';
 
 const PORT = Number(config.env.PORT) || 8080;
 
@@ -15,7 +16,11 @@ config.passportInit();
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+  },
+});
 const manager = new Manager(io);
 
 config.loadMiddleware(app);
@@ -28,17 +33,24 @@ app.get('/api/ping', (req, res) => {
   res.send('pong');
 });
 
-app.get('/player', (req, res) => {
+app.get('/api/player', (req, res) => {
   if (req.isAuthenticated()) {
+    console.log('is authed');
     const uuid = manager.addPlayer(<UserType> req.user);
-    res.json({ uuid });
+    console.log(uuid);
+    res.json({ success: true, uuid: uuid } );
+  } else {
+    console.log('is not authed');
+    res.json({ success: false });
   }
 });
 
 io.on('connection', async (socket) => {
   console.log('a user connected');
-
+  
   socket.on('queue', (uuid: string) => {
+    console.log('someone queued');
+    console.log(uuid);
     manager.enterQueue(uuid, socket);
   });
 });
