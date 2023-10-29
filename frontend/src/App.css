@@ -310,3 +310,147 @@ body {
   top: 20%;
   justify-content: center; /* Align horizontal */
 }
+
+.tab-bar {
+  padding: 0px;
+  margin: 0px;
+  
+  background-color: #EBEBF0;
+
+  height: 40px;
+  width: calc(100vw - 510px);
+
+}
+
+.tab-custom {
+  text-align: left;
+
+  top: 0px;
+  padding: 0px;
+  padding-left: 18px;
+  margin: 0px;
+
+  background-color: #EBEBF0;
+
+  border-style: none;
+  border-left-width: 2px;
+  border-left: #FF9E2D;
+  border-left-style: solid;
+
+  width: calc((100vw - 510px) / 4);
+  height: 40px;
+  
+  color: black;
+  font-family: 'Inconsolata';
+  font-size: 20px;
+}
+
+.tab-custom:active {
+  border-style: none;
+  border-left-style: solid;
+}
+
+.tab-custom.open {
+  background-color: white;
+}
+
+.tab-custom.left {
+  border-style: none;
+}
+
+.tests {
+  position: absolute;
+  bottom: 0px;
+  background-color: rgb(255, 255, 255);
+
+  padding-left: 18px;
+
+  border-top-width: 2px;
+  border-top: #FF9E2D;
+  border-top-style: solid;
+
+  width: calc(100vw - 528px);
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+
+  color: black;
+  font-family: 'Inconsolata';
+  font-size: 20px;
+}
+
+.run-button {  
+  position: absolute;
+  background-color: #fff0de;
+
+  right: 0px;
+
+  width: 144px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Inconsolata';
+  font-size: 20px;
+
+  border-style: none;
+
+  color: black;
+  font-family: 'Inconsolata';
+  font-size: 20px;
+}
+
+.run-button:active {
+  border-style: none;
+}
+
+.code-block-div {
+  background-color: rgb(107, 38, 38);
+
+  height: calc(100vh - 272px);
+  width: calc(100vw - 510px);
+
+  position: absolute;
+
+  color: black;
+  font-family: 'Inconsolata';
+  font-size: 20px;
+  
+}
+
+.code-block-input {
+  height: calc(100vh - 272px);
+  width: calc(100vw - 510px);
+
+  box-sizing: border-box;
+
+  border: none;
+
+  padding: 9px;
+  padding-top: 18px;
+  padding-left: 18px;
+
+  color: black;
+  font-family: 'Inconsolata';
+  font-size: 20px;
+
+  overflow-y: scroll;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  
+  resize: none;
+}
+
+.code-block-input::-webkit-scrollbar { 
+  background: rgba(0,0,0,0);
+  width: 0;
+  height: 0;
+}
+
+.code-block-input:focus {
+  outline:none
+}

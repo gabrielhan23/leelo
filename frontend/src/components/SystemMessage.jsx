@@ -8,8 +8,6 @@ export default function SystemMessage(props) {
         message
     } = props;
 
-    console.log(message)
-
     return (
         <div className="system-message"> {message} </div>
     )

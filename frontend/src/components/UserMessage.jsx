@@ -9,8 +9,6 @@ export default function UserMessage(props) {
         message
     } = props;
 
-    console.log(message)
-
     return (
         <div className="user-message"> {sender}: {message} </div>
     )

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 
 
-function Footer() {
+export default function Footer() {
     return (
         <nav className="navbar">
             <div className="footer">
@@ -11,7 +11,5 @@ function Footer() {
             </div>
         </nav>
     );
-  }
-  
-  export default Footer;
+}
   
