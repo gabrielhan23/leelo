@@ -189,14 +189,19 @@ body {
 .login {
   background-color: rgb(255, 255, 255);
   color: #FF9E2D;
-  height: 30px;
-  width: 200px;
+  height: 50px;
+  width: 500px;
   display: flex;
   justify-content: center; /* Align horizontal */
   align-items: center;
   position: absolute;
   font-family: 'Inconsolata';
-  font-size: 24px;
+  font-size: 48px;
+  border: none;
+  border-color: transparent;
+  background: transparent;
+  border-style: none;
+  text-align: center;
 }
 
 .login-page {
