@@ -219,3 +219,9 @@ body {
   font-family: 'Inconsolata';
   font-size: 48px;
 }
+
+.gamefound {
+  position: absolute;
+  top: 20%;
+  justify-content: center; /* Align horizontal */
+}
