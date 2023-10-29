@@ -5,12 +5,13 @@ import '../App.css';
 export default function UserMessage(props) {
     const {
         message_id,
+        sender,
         message
     } = props;
 
     console.log(message)
 
     return (
-        <div className="user-message"> {message} </div>
+        <div className="user-message"> {sender}: {message} </div>
     )
 }

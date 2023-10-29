@@ -6,9 +6,10 @@ import ChatWindow from './ChatWindow';
 import CodeWindow from './CodeWindow';
 
 export default function GameWindow() {
+    const team = "orange";
     return (
         <div className="game-window"> 
-            <ChatWindow messages={["hello", "hi"]}/> 
+            <ChatWindow team={team}/> 
             <CodeWindow/>
         </div>
     )

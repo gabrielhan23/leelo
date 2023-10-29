@@ -4,6 +4,9 @@ import '../App.css';
 
 export default function CodeWindow() {
     return (
-        <div className="code-window"> </div>
+        <div className="code-window"> 
+            
+            
+        </div>
     )
 }
