@@ -7,7 +7,7 @@ function Footer() {
     return (
         <nav className="navbar">
             <div className="footer">
-                <Link to="/login" className="navbar-logo"><div>test</div></Link>
+                <Link to="/login" className="navbar-logo"><div></div></Link>
             </div>
         </nav>
     );

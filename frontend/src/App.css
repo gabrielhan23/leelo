@@ -190,6 +190,19 @@ body {
   background-color: rgb(255, 255, 255);
   color: #FF9E2D;
   height: 30px;
+  width: 200px;
+  display: flex;
+  justify-content: center; /* Align horizontal */
+  align-items: center;
+  position: absolute;
+  font-family: 'Inconsolata';
+  font-size: 24px;
+}
+
+.login-page {
+  background-color: rgb(255, 255, 255);
+  color: #FF9E2D;
+  height: 240px;
   width: 600px;
   display: flex;
   justify-content: center; /* Align horizontal */
@@ -199,5 +212,5 @@ body {
   left: 50vw;
   transform: translate(-50%, -50%);
   font-family: 'Inconsolata';
-  font-size: 24px;
+  font-size: 48px;
 }

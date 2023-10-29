@@ -7,7 +7,7 @@ import '../App.css';
 import PlayerCounter from './PlayerCounter';
 
 function Login() {
-    return(<input type="text" className="login" placeholder="username"></input>)
+    return(<div className="login-page"><input type="text" className="login" placeholder="username"></input></div>)
   }
   
   export default Login;
