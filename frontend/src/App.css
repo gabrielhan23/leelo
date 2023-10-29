@@ -113,7 +113,7 @@ body {
   width: 100vw;
 }
 
-.login {
+.login-icon {
   width: 100%;
 }
 
@@ -255,4 +255,44 @@ body {
 
 .counter-padding {
   font-size: 12px;
+}
+
+.login {
+  background-color: rgb(255, 255, 255);
+  color: #FF9E2D;
+  height: 50px;
+  width: 500px;
+  display: flex;
+  justify-content: center; /* Align horizontal */
+  align-items: center;
+  position: absolute;
+  font-family: 'Inconsolata';
+  font-size: 48px;
+  border: none;
+  border-color: transparent;
+  background: transparent;
+  border-style: none;
+  text-align: center;
+}
+
+.login-page {
+  background-color: rgb(255, 255, 255);
+  color: #FF9E2D;
+  height: 240px;
+  width: 600px;
+  display: flex;
+  justify-content: center; /* Align horizontal */
+  align-items: center;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  font-family: 'Inconsolata';
+  font-size: 48px;
+}
+
+.gamefound {
+  position: absolute;
+  top: 20%;
+  justify-content: center; /* Align horizontal */
 }
