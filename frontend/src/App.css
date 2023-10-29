@@ -185,3 +185,19 @@ body {
 .counter-padding {
   font-size: 12px;
 }
+
+.login {
+  background-color: rgb(255, 255, 255);
+  color: #FF9E2D;
+  height: 30px;
+  width: 600px;
+  display: flex;
+  justify-content: center; /* Align horizontal */
+  align-items: center;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  font-family: 'Inconsolata';
+  font-size: 24px;
+}
