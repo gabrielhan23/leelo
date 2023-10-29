@@ -1,0 +1,66 @@
+import { exec } from 'child_process';
+
+import Game from './game';
+import Player from './player';
+
+class Team {
+  players: Player[];
+  code: string[] = [];
+  testsPassed: number = 0;
+  game: Game;
+
+  constructor(players: Player[], game: Game) {
+    this.players = players;
+    this.game = game;
+
+    for (const p of players) {
+      p.team = this;
+    }
+  }
+
+  relay(from: Player, msg: any) {
+    const p = this.players.filter((player) => player !== from)[0];
+    p.emit(msg);
+  }
+
+  // lineNum is 0-indexed
+  updateCode(from: Player, line: string, lineNum: number) {
+    const l = line.split('\n');
+    this.code[lineNum] += l[0];
+    this.code.splice(lineNum, 0, ...l.slice(1));
+
+    this.relay(from, {
+      message: 'game/type',
+      body: {
+        line,
+        lineNum,
+      },
+    });
+  }
+
+  allCode() {
+    let c: string = '';
+    for (const line of this.code) {
+      c += line;
+    }
+    return c;
+  }
+
+  checkCode(){
+    for (const testCase in this.game.problem.testCases) {
+      exec('python3 -c' + this.allCode() + , { timeout: 1 }, (error, stdout, stderr) => {
+        if (error) {
+          return error;
+        } else if (stderr) {
+          return stderr;
+        } else {
+          if (stdout === testCase.output) {
+            return;
+          }
+        }
+      });
+    }
+  }
+}
+
+export default Team;

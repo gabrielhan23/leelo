@@ -29,7 +29,7 @@ router.route(LOGIN_REDIRECT).get(passport.authenticate('google', {
   successRedirect: SUCCESS_REDIRECT,
 }));
 
-router.route(LOGOUT_ROUTE).post((req, res) => {
+router.route(LOGOUT_ROUTE).get((req, res) => {
   req.logout((err) => {
     if (err) {
       res.redirect(FAILURE_REDIRECT);

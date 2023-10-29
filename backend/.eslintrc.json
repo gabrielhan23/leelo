@@ -78,6 +78,9 @@
             "error",
             "always-multiline"
         ],
+        "no-tabs": [
+            "error"
+        ],
         "@typescript-eslint/no-explicit-any": "off"
     }
 }
