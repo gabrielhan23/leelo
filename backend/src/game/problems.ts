@@ -2,6 +2,8 @@ export type ProblemType = {
   id: number,
   title: string,
   description: string,
+  header: string,
+  funcName: string,
   examples: {
     input: any[],
     output: any,
@@ -12,11 +14,13 @@ export type ProblemType = {
   }[],
 };
 
-const problems = [
+const problems: ProblemType[] = [
   {
     id: 1,
     title: 'Add Two Numbers',
     description: 'Adding Practice',
+    header: 'def add(a, b):',
+    funcName: 'add',
     examples: [
       {
         input: [1,2],

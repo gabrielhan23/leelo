@@ -25,7 +25,10 @@ class Team {
 
   // lineNum is 0-indexed
   updateCode(from: Player, line: string, lineNum: number) {
-    this.code[lineNum] = line;
+    const l = line.split('\n');
+    this.code[lineNum] += l[0];
+    this.code.splice(lineNum, 0, ...l.slice(1));
+
     this.relay(from, {
       message: 'game/type',
       body: {
@@ -35,19 +38,28 @@ class Team {
     });
   }
 
+  allCode() {
+    let c: string = '';
+    for (const line of this.code) {
+      c += line;
+    }
+    return c;
+  }
+
   checkCode(){
-    // for x in
-    exec('python3 shell.py', { timeout: 1 }, (error, stdout, stderr) => {
-      if (error) {
-        return error;
-      } else if (stderr) {
-        return stderr;
-      } else {
-        if (stdout === this.game.problem.testCases[0].output) {
-          return;
+    for (const testCase in this.game.problem.testCases) {
+      exec('python3 -c' + this.allCode() + , { timeout: 1 }, (error, stdout, stderr) => {
+        if (error) {
+          return error;
+        } else if (stderr) {
+          return stderr;
+        } else {
+          if (stdout === testCase.output) {
+            return;
+          }
         }
-      }
-    });
+      });
+    }
   }
 }
 

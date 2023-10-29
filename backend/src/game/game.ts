@@ -24,7 +24,7 @@ class Game {
     this.problem = problems[Math.round(Math.random() / problems.length)];
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { testCases, ...sendProblem } = this.problem;
+    const { testCases, funcName, ...sendProblem } = this.problem;
     this.broadcast({
       message: 'game/start',
       body: sendProblem,

@@ -40,6 +40,8 @@ class Manager {
         [this.queue[0], this.queue[3]],
         [this.queue[1], this.queue[2]],
       );
+    } else {
+      this.io.to('queue').emit('queue', this.queue.length);
     }
   }
 
@@ -50,6 +52,7 @@ class Manager {
     }
 
     p.attachSocket(socket);
+    p.socket!.join('queue');
 
     this.queue.push(p);
     this.findMatches();
@@ -64,6 +67,7 @@ class Manager {
 
     for (const p of team1.concat(team2)) {
       this.leaveQueue(p);
+      p.socket!.leave('queue');
       p.socket!.join(code);
     }
 
