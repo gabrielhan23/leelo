@@ -1,4 +1,6 @@
 import Player from './player';
+import problems, { ProblemType } from './problems';
+import Team from './team';
 
 /*
 list of players
@@ -9,17 +11,24 @@ code running
 */
 
 class Game {
-  team1: Player[];
-  team2: Player[];
+  teams: Team[];
 
-  broadcast: (msg: string) => void;
+  problem: ProblemType;
 
-  constructor(team1: Player[], team2: Player[], broadcast: (msg: string) => void) {
-    this.team1 = team1;
-    this.team2 = team2;
+  broadcast: (msg: any) => void;
+
+  constructor(team1: Player[], team2: Player[], broadcast: (msg: any) => void) {
+    this.teams = [new Team(team1, this), new Team(team2, this)];
     this.broadcast = broadcast;
 
-    this.broadcast('game/start');
+    this.problem = problems[Math.round(Math.random() / problems.length)];
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { testCases, ...sendProblem } = this.problem;
+    this.broadcast({
+      message: 'game/start',
+      body: sendProblem,
+    });
   }
 }
 

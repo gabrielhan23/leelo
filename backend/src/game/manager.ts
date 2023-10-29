@@ -62,7 +62,12 @@ class Manager {
   createGame(team1: Player[], team2: Player[]) {
     const code = this.generateUniqueCode();
 
-    const g = new Game(team1, team2, (msg: string) => this.io.to(code).emit(msg));
+    for (const p of team1.concat(team2)) {
+      this.leaveQueue(p);
+      p.socket!.join(code);
+    }
+
+    const g = new Game(team1, team2, (msg: any) => this.io.to(code).emit(msg));
 
     this.games.set(code, g);
   }
