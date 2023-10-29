@@ -20,7 +20,7 @@ function App() {
           }}/>
         <Routes>
           <Route path='/' element={<Queue dark={dark} setSocket={setSocket}/>} />
-          <Route path='/queue' element={<InQueue dark={dark} socket={socket}/>} />
+          <Route path='/queue' element={<InQueue dark={dark}/>} />
           <Route path='/game' element={<GameWindow dark={dark} socket={socket}/>} />
           <Route path='/login' element={<Login dark={dark} socket={socket}/>} />
         </Routes>

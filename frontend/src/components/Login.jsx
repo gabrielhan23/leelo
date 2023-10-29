@@ -14,9 +14,9 @@ function Login({dark}) {
             // "no-cors": true,
             mode: 'no-cors',
             credentials: 'include'
-        // }).then(() => {
-        //     console.log('finished')
-        //     window.location.href = 'http://localhost:8080/api/login'
+        }).then(() => {
+            console.log('finished')
+            window.location.href = 'http://localhost:8080/api/login'
         })
     }
     
