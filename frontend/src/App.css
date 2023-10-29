@@ -320,5 +320,33 @@ body {
 }
 
 .dark1 {
-  background-color:black;
+  background-color:#282828;
+}
+
+.light1 {
+  background-color: white;
+}
+
+.dark2 { 
+  background-color: #2F2F33;
+}
+
+.light2 { 
+  background-color: #696969;
+}
+
+.dark3 {
+  color: #BEA7FF;
+}
+
+.light3 { 
+  color: #FF9E2D;
+}
+
+.light4 {
+  color: #BEA7FF;
+}
+
+.dark4 {
+  color: #FF9E2D;
 }

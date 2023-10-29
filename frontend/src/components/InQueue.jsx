@@ -6,7 +6,7 @@ import { Link, redirect } from 'react-router-dom';
 import '../App.css';
 import PlayerCounter from './PlayerCounter';
 
-function Queue() {
+function Queue({dark}) {
 
     //use componentdidmount to add self to queue, if neccecary 
 
@@ -35,7 +35,7 @@ function Queue() {
         return (
             //this should not be a link; change eventually to a div or the col/row thing, and have buttons in the div
             //the onMouseOver is temp, you can change it later
-            <div className="in-queue"><div className="gamefound">game found, loading...</div><div className="player-counter"><PlayerCounter players={playerCount} /></div></div>
+            <div className={"in-queue " + dark + "1"}><div className={"gamefound " + dark + "3"}>game found, loading...</div><div className="player-counter"><PlayerCounter players={playerCount} /></div></div>
         );
     } else {
         return ( 
