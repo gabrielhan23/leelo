@@ -7,7 +7,24 @@ import '../App.css';
 import PlayerCounter from './PlayerCounter';
 
 function Login({dark}) {
-    return(<div className={"login-page " + dark + "1"}><input type="text" className={"login " + dark + "3"} placeholder="username"></input></div>)
+    const handleLogin = () => {
+        console.log('trying to login');
+        // window.location.href = 'http://localhost:8080/api/login'
+        fetch('http://localhost:8080/api/login', {
+            // "no-cors": true,
+            mode: 'no-cors',
+            credentials: 'include'
+        // }).then(() => {
+        //     console.log('finished')
+        //     window.location.href = 'http://localhost:8080/api/login'
+        })
+    }
+    
+    return (
+        <div className={"login-page " + dark + "1"} onClick={handleLogin}>
+            <button className={"login " + dark + "2"} >Login</button>
+        </div>
+    )
   }
   
   export default Login;
