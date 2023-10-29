@@ -7,11 +7,14 @@ import '../App.css';
 import PlayerCounter from './PlayerCounter';
 
 function Queue() {
+
+    //use componentdidmount to add self to queue, if neccecary 
+
     const [time, setTime] = useState(0);
     const [playerCount, updatePlayerCount] = useState(4);
 
     const [isRunning, setIsRunning] = useState(false);
-
+    
     useEffect(() => {
         let intervalId;
         if (playerCount < 4) {
