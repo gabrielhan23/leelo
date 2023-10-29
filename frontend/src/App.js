@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import InQueue from './components/InQueue';
 import GameWindow from './components/GameWindow';
+import Login from './components/Login';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 import './App.css';
 
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element={<Queue/>} />
           <Route path='/queue' element={<InQueue/>} />
           <Route path='/game' element={<GameWindow/>} />
+          <Route path='/login' element={<Login/>} />
         </Routes>
         {/* <Queue /> */}
         <Footer />
