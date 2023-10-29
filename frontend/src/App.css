@@ -321,10 +321,12 @@ body {
 
 .dark1 {
   background-color:#282828;
+  border-color: #BEA7FF;
 }
 
 .light1 {
   background-color: white;
+  border-color: #FF9E2D;
 }
 
 .dark2 { 
@@ -337,16 +339,20 @@ body {
 
 .dark3 {
   color: #BEA7FF;
+  border-color: #BEA7FF;
 }
 
 .light3 { 
   color: #FF9E2D;
+  border-color: #FF9E2D;
 }
 
 .light4 {
   color: #BEA7FF;
+  border-color: #BEA7FF;
 }
 
 .dark4 {
   color: #FF9E2D;
+  border-color: #FF9E2D;
 }

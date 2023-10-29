@@ -10,7 +10,7 @@ function Queue({dark}) {
     const [hover, toggleHover] = useState(false);
     console.log(hover);
     return (
-        <Link to="/queue" onMouseEnter={()=>toggleHover(!hover)} onMouseLeave={()=>toggleHover(!hover)}><div className={hover ? "queue-button-hover " + dark + "1" : "queue-button " + dark + "1"}>queue up</div></Link>
+        <Link to="/queue" onMouseEnter={()=>toggleHover(!hover)} onMouseLeave={()=>toggleHover(!hover)}><div className={hover ? "queue-button-hover " + dark + "1" : "queue-button " + dark + "1"}><p className={dark + "3"}>queue up</p></div></Link>
     );
   }
   

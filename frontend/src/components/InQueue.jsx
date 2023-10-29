@@ -6,7 +6,7 @@ import { Link, redirect } from 'react-router-dom';
 import '../App.css';
 import PlayerCounter from './PlayerCounter';
 
-function Queue({dark}) {
+function InQueue({dark}) {
 
     //use componentdidmount to add self to queue, if neccecary 
 
@@ -35,15 +35,15 @@ function Queue({dark}) {
         return (
             //this should not be a link; change eventually to a div or the col/row thing, and have buttons in the div
             //the onMouseOver is temp, you can change it later
-            <div className={"in-queue " + dark + "1"}><div className={"gamefound " + dark + "3"}>game found, loading...</div><div className="player-counter"><PlayerCounter players={playerCount} /></div></div>
+            <div className={"in-queue " + dark + "1"}><div className={"gamefound " + dark + "3"}>game found, loading...</div><div className="player-counter"><PlayerCounter players={playerCount} dark={dark}/></div></div>
         );
     } else {
         return ( 
-            <div className="in-queue"><div className="timer">{Math.floor(time / 60)}:{time % 60 < 10 ? "0" : ""}{time % 60}</div><div className="inqueue-text">in queue</div><div className="player-counter"><PlayerCounter players={playerCount} /></div></div>
+            <div className={"in-queue " + dark + "1"}><div className={"timer " + dark + "3"}>{Math.floor(time / 60)}:{time % 60 < 10 ? "0" : ""}{time % 60}</div><div className="inqueue-text">in queue</div><div className="player-counter"><PlayerCounter players={playerCount} dark={dark}/></div></div>
         )
         //{Math.floor(Time / 60) < 10 ? "0" : ""}
     }
   }
   
-  export default Queue;
+  export default InQueue;
   
