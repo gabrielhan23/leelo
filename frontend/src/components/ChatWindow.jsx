@@ -7,8 +7,12 @@ import { Row, Container } from 'react-bootstrap';
 import UserMessage from './UserMessage'
 import SystemMessage from './SystemMessage'
 import ChatInputBox from './ChatInputBox'
+import { useState, useEffect } from 'react'
 
-export default function ChatWindow(props) {
+export default function ChatWindow({ socket }) {
+    useEffect(() => {
+        socket.on('')
+    });
     // TODO: connect to API
     const messages = [
         {message_id: 1, message_type: 0, sender: "sys", message: "You are on the orange team"},

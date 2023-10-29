@@ -3,10 +3,11 @@ import {
     Pressable,
 } from 'react-native';
 import { Link } from 'react-router-dom';
+import { io } from 'socket.io-client';
 import '../App.css';
 
 
-function Queue() {
+function Queue({ setSocket }) {
     const [hover, toggleHover] = useState(false);
     console.log(hover);
     return (
@@ -14,7 +15,14 @@ function Queue() {
         // onPress={() => console.log(window.innerWidth, window.innerHeight)}> 
         //     <div className="Queue_Button">queue up</div>
         // </Pressable>
-        <Link to="/queue" onMouseEnter={()=>toggleHover(!hover)} onMouseLeave={()=>toggleHover(!hover)}><div className={hover ? "queue-button-hover" : "queue-button"}>queue up</div></Link>
+        <Link 
+            to="/inqueue"
+            onMouseEnter={()=>toggleHover(!hover)}
+            onMouseLeave={()=>toggleHover(!hover)}
+            onClick={() => setSocket(io())}
+        >
+            <div className={hover ? "queue-button-hover" : "queue-button"}>queue up</div>
+        </Link>
     );
   }
   
