@@ -8,7 +8,7 @@ import PlayerCounter from './PlayerCounter';
 
 function Queue() {
     const [time, setTime] = useState(0);
-    const [playerCount, updatePlayerCount] = useState(1);
+    const [playerCount, updatePlayerCount] = useState(4);
 
     const [isRunning, setIsRunning] = useState(false);
 

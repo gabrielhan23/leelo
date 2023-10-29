@@ -166,7 +166,14 @@ body {
   position: absolute;
 
   overflow-y: scroll;
-  scrollbar-width: none; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;   
+}
+
+.chat-window::-webkit-scrollbar { 
+  background: rgba(0,0,0,0);
+  width: 0;
+  height: 0;
 }
 
 .code-window {
@@ -244,8 +251,15 @@ body {
 
   overflow-y: scroll;
   scrollbar-width: none; 
+  -ms-overflow-style: none; 
   
   resize: none;
+}
+
+.chat-input::-webkit-scrollbar { 
+  background: rgba(0,0,0,0);
+  width: 0;
+  height: 0;
 }
 
 .chat-input:focus {
