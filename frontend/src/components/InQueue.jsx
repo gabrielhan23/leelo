@@ -8,7 +8,7 @@ import PlayerCounter from './PlayerCounter';
 
 function Queue() {
     const [Time, setTime] = useState(0);
-    const [playerCount, updatePlayerCount] = useState(1);
+    const [playerCount, updatePlayerCount] = useState(2);
     if (playerCount == 4) {
         return (
             //this should not be a link; change eventually to a div or the col/row thing, and have buttons in the div

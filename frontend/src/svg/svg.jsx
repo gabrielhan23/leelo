@@ -22,3 +22,21 @@ export function Person() {
     </svg>
     )
 }
+
+export function Queue_Empty() {
+    return (
+    <svg width="39" height="48" viewBox="0 0 39 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="19.2001" cy="12" r="9.6" stroke="#BEA7FF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M5.21738 32.9935C6.30516 30.3367 8.97163 28.8 11.8425 28.8H26.5573C29.4282 28.8 32.0946 30.3367 33.1824 32.9935C34.4101 35.9919 35.788 40.2512 35.9778 44.6002C36.0019 45.1519 35.5522 45.6 34.9999 45.6H3.3999C2.84762 45.6 2.39792 45.1519 2.42199 44.6002C2.61176 40.2512 3.98975 35.9919 5.21738 32.9935Z" stroke="#BEA7FF" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    )
+}
+
+export function Queue_Fill() {
+    return (
+    <svg width="39" height="48" viewBox="0 0 39 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="19.2001" cy="12" r="9.6" fill="#BEA7FF" stroke="#BEA7FF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M5.21739 32.9935C6.30516 30.3367 8.97163 28.8 11.8425 28.8H26.5573C29.4282 28.8 32.0946 30.3367 33.1824 32.9935C34.4101 35.9919 35.788 40.2512 35.9778 44.6002C36.0019 45.1519 35.5522 45.6 34.9999 45.6H3.3999C2.84762 45.6 2.39792 45.1519 2.42199 44.6002C2.61176 40.2512 3.98975 35.9919 5.21739 32.9935Z" fill="#BEA7FF" stroke="#BEA7FF" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    )
+}
