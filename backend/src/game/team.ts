@@ -2,6 +2,7 @@ import { exec } from 'child_process';
 
 import Game from './game';
 import Player from './player';
+import { ProblemType } from './problems';
 
 class Team {
   players: Player[];
@@ -38,24 +39,27 @@ class Team {
     });
   }
 
-  allCode() {
+  allCode(inputs: any[]) {
     let c: string = '';
     for (const line of this.code) {
       c += line;
     }
+    c += `\n ${this.game.problem.funcName}(*${inputs})`;
     return c;
   }
 
   checkCode(){
-    for (const testCase in this.game.problem.testCases) {
-      exec('python3 -c' + this.allCode() + , { timeout: 1 }, (error, stdout, stderr) => {
+    for (const testCase of this.game.problem.testCases) {
+      exec(`echo ${this.allCode(testCase.input)} > temp.txt | python3 `, { timeout: 1 }, (error, stdout, stderr) => {
         if (error) {
           return error;
         } else if (stderr) {
           return stderr;
         } else {
           if (stdout === testCase.output) {
-            return;
+            return 'success';
+          } else {
+            return 'Recieved: ' + stdout;
           }
         }
       });
